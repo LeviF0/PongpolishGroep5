@@ -15,7 +15,7 @@ public class AudioPlayerZK : MonoBehaviour
     AudioSource source;
     PlayerMovement playerMov;
     float ogPlayerMov;
-    void Start()
+    void Awake()
     {
         
         clip1 = Resources.Load<AudioClip>("Audio/collision1"); //teveel audio i know

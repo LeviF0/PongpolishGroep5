@@ -6,7 +6,7 @@ public class ScriptManagerBall : MonoBehaviour
 {
     GameObject ballObj;
     AudioPlayerZK audioScript;
-    void Start()
+    void Awake()
     {
         ballObj = GameObject.FindGameObjectWithTag("Player");
         audioScript = ballObj.AddComponent<AudioPlayerZK>();
