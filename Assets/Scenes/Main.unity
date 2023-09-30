@@ -510,8 +510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a725e901d606dc34ebb70b49517b9b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ball: {fileID: 0}
-  audioAdd: {fileID: 0}
 --- !u!1 &983938420
 GameObject:
   m_ObjectHideFlags: 0
