@@ -9,6 +9,7 @@ public class ScriptPlacer : MonoBehaviour
     void Start()
     {
         ball = GameObject.Find("Ball").GetComponent<GameObject>();
+        ball = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
