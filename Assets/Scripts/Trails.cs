@@ -18,6 +18,17 @@ public class Trails : MonoBehaviour
         trailRenderer.sortingOrder = -1;
         trailRenderer.material = new Material(Shader.Find("Sprites/Default"));
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gradient.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(Color.red, 0.0f), new GradientColorKey(Color.green, 2.5f), new GradientColorKey(Color.blue, 5.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(alpha, 5.0f) });
+            StartCoroutine(ResetsTrail());
+            return;
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "PlayerLeft")
