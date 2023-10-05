@@ -9,12 +9,9 @@ public class ScriptSet : MonoBehaviour
 
     void Start()
     {
-        //ball = GameObject.FindGameObjectWithTag("Player");
-        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-        //ball.AddComponent<ShakeScreen>();
-        mainCamera.AddComponent<ShakeScreen>();
-        mainCamera.AddComponent<BackgroundChange>();
-        ball.AddComponent<BackgroundChange>();
-
+        ball = GameObject.FindGameObjectWithTag("Player");
+        //mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        ball.AddComponent<ShakeScreen>();
+        //mainCamera.AddComponent<ShakeScreen>();
     }
 }
