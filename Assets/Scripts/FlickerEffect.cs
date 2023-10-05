@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class FlickerEffect : MonoBehaviour
 {
-    [SerializeField]
-    private SpriteRenderer spriteRenderer;
-    private bool isFlickerEnabled = false;
+    protected Renderer rend;
+    private Color startColor;
+    private Color afterColor = Color.white;
+    private float transition = 2.0f;
 
-    void EnableFlicker()
+    protected virtual void Start()
     {
-        isFlickerEnabled = true;
+        rend = GetComponent<Renderer>();
+        startColor = rend.material.color;
     }
 
-    IEnumerator colorFlickerRoutine()
+    protected virtual void Update()
     {
-        while (isFlickerEnabled == true)
+        if (rend == null)
         {
-            spriteRenderer.color = Color.red;
-            yield return new WaitForSeconds(0.8f);
-            spriteRenderer.color = Color.white;
-            yield return new WaitForSeconds(0.8f);
-            isFlickerEnabled = false;
+            return;
+        }
+
+        float t = (Time.time / transition) % 1.0f;
+        rend.material.color = Color.Lerp(startColor, afterColor, t);
+
+        if (t >= 1.0f)
+        {
+            Destroy(this);
         }
     }
 }
