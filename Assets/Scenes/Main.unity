@@ -463,7 +463,6 @@ GameObject:
   m_Component:
   - component: {fileID: 760442821}
   - component: {fileID: 760442820}
-  - component: {fileID: 760442822}
   - component: {fileID: 760442823}
   m_Layer: 0
   m_Name: GameController
@@ -499,20 +498,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &760442822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760442819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d67de717890da5946b6adaea1aeeabd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  a_Audio: []
-  clip1: {fileID: 0}
 --- !u!114 &760442823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,7 +507,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 760442819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27afed31e140019468ad50b2d1476236, type: 3}
+  m_Script: {fileID: 11500000, guid: a725e901d606dc34ebb70b49517b9b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &983938420

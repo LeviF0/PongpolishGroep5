@@ -9,35 +9,37 @@ public class ShakeScreen : MonoBehaviour
     public bool start = false;
     public float duration = 1f;
     Camera camera;
+    GameObject ball;
 
     private void Start()
     {
-        camera = GetComponent<Camera>();
+        camera = Camera.main;
+        ball = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "BoundLeft")
+        if (other.gameObject.CompareTag("BoundLeft"))
         {
             print("hsuiovf");
             StartCoroutine(Shaking());
         }
-        else if (other.gameObject.tag == "BoundRight")
+        else if (other.gameObject.CompareTag("BoundRight"))
         {
             print("uivhfboa");
             StartCoroutine(Shaking());
         }
     }
 
-    //private void Update()
-    //{
-    //    camera = Camera.main;
-    //    if (start)
-    //    {
-    //        start = false;
-    //        StartCoroutine(Shaking());
-    //    }
-    //}
+    private void Update()
+    {
+        camera = Camera.main;
+        if (start)
+        {
+            start = false;
+            StartCoroutine(Shaking());
+        }
+    }
 
 
     /*IEnumerator*/
@@ -45,6 +47,7 @@ public class ShakeScreen : MonoBehaviour
     {
         //make it when I hit a key the screen shakes
         //IEnumerator Shaking()
+        
         Vector3 startPosition = transform.position; // this is the position of the camera
         float elapsedTime = 0f; // this is the timer
 
